@@ -1,0 +1,29 @@
+<%= form_for @entry, :url => {:action => :create} do |form| %>
+
+  <div class ="title_input">
+  <div class="row">
+      <div class="row">
+        <div class=" input-field col s12">
+          <%= form.label :title,:html => {:class =>"textarea1"} %>
+          <%= form.text_field :title,:html => {:id =>"textarea1",:class => "materialize-textarea"}%>
+        </div>
+      </div>
+  </div>
+</div>
+
+  <div class ="body_input">
+  <div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= form.label :body,:html => {:class =>"textarea1"} %>
+          <%= form.text_field :body,:html => {:id =>"textarea1",:class => "materialize-textarea"}%>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+    <%= form.submit "send",:class=>"btn waves-effect waves-light" %>
+
+
+<% end %>

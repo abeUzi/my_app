@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <title>MyApp</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper teal darken-4">
+                <%= link_to 'Blog','/entry',class:'brand-logo' %>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                </ul>
+                <% if user_signed_in? %>
+                <ul class="b_btn">
+                    <%= link_to "投稿", new_entry_path, class: 'post waves-effect waves-light btn' %>
+                    <%= link_to "ログアウト", destroy_user_session_path,method: :delete, class: ' waves-effect waves-light btn' %>
+                </ul>
+                <% else %>
+                 <ul class="b_btn">
+                    <%= link_to "ログイン", new_user_session_path, class: 'waves-effect waves-light btn' %>
+                    <%= link_to "新規登録", new_user_registration_path, class: 'waves-effect waves-light btn' %>
+                </ul>
+                <% end %>
+            </div>
+        </nav>
+    </header>
+    <%= yield %>
+    <footer class="page-footer #004d40 teal darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright ">
+            <div class="container">
+                © 2018 Copyright Text
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+
+</html>

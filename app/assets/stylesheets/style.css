@@ -1,0 +1,28 @@
+.title_high{
+  padding: 88px 0px 0px;
+}
+
+.b_btn{
+  float:right;
+
+}
+
+.title_input{
+  width: 60%
+}
+
+.body_input{
+  width: 80%
+}
+
+.pagination{
+  background-color: #00695c;
+}
+
+.tag{
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
+
